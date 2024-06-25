@@ -4,7 +4,6 @@ import { Sidechain } from '@nprapps/sidechain';
 
 import parse from 'html-react-parser';
 import Stepper from './lib/Stepper';
-import BarChart from './lib/BarChart';
 
 const GraphicWrapper = styled.div`
   font-family: BentonSansCond, Arial Narrow, Helvetica, Arial, sans-serif;
@@ -48,11 +47,11 @@ const App = () => {
 
   return (
     <GraphicWrapper className="custom" id="App">
-      <h5 className="hed bentonsanscond-n6">Test Graphic</h5>
+      <h5 className="hed bentonsanscond-n6">Headline of the graphic here</h5>
       <p className="chatter bentonsanscond-n4">Chatter text goes here Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
       <section className="container">
-        <BarChart /> {/* Render the BarChart component */}
         <p className="bentonsanscond-n4">Content goes here</p>
+        <Stepper />
       </section>
 
       <div className="footer">
