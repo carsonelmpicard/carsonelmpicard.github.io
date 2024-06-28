@@ -1,6 +1,5 @@
 body {
   font-family: 'Menlo', 'Consolas', 'DejaVu Sans Mono', monospace;
-  color: #333;
   margin: 0;
   padding: 0;
 }
@@ -18,6 +17,10 @@ body {
   font-size: 36px;
   font-weight: bold;
   margin: 0;
+}
+
+.flourish-embed{
+    padding: 0px 30px; /* Adjust the padding as needed */
 }
 
 a {
@@ -38,17 +41,21 @@ article {
 }
 
 .article-title {
+  color: #0000ff;
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px;
   padding: 0px 40px; /* Adjust the padding as needed */
 }
 
-.article-author, .article-date {
-  font-size: 14px;
-  color: #888;
-  margin: 0;
+.article-subtitle {
+  color: #0000ff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 0px 40px; /* Adjust the padding as needed */
 }
+
 
 .article-content {
   font-size: 15px;
