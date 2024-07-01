@@ -608,14 +608,9 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
         data.forEach((item)=>{
             const year = item.Year;
             const month = item.Month;
-            if (!organizedData[year]) organizedData[year] = {};
-            organizedData[year][month] = item.logan_intl_flights;
-        });
-        // Sort months based on the predefined order
-        Object.keys(organizedData).forEach((year)=>{
-            months.forEach((month)=>{
-                if (!organizedData[year][month]) organizedData[year][month] = 0; // Set missing months to 0
-            });
+            const label = `${month} ${year}`; // Create a label in the format "Jan 2013"
+            if (!organizedData[label]) organizedData[label] = item.logan_intl_flights;
+            else organizedData[label] += item.logan_intl_flights; // Sum flights if the label already exists (this might be optional based on your data structure)
         });
         return organizedData;
     };
@@ -861,22 +856,23 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
             logan_intl_flights: 4150
         }
     ];
-    // Organize data by month for Logan International Flights
+    // Organize data by month and year for Logan International Flights
     const loganFlightsByMonth = organizeDataByMonth(loganFlightsData);
     // Create a bar chart for Logan International Flights
-    const loganFlightsChartElement = document.getElementById("logan_flights_chart");
-    const uniqueYears = Object.keys(loganFlightsByMonth); // Get unique years from the organized data
-    new (0, _autoDefault.default)(loganFlightsChartElement, {
+    const loganFlightsBarChartElement = document.getElementById("logan_flights_bar_chart");
+    new (0, _autoDefault.default)(loganFlightsBarChartElement, {
         type: "bar",
         data: {
-            labels: months.map((month)=>`${month}`),
-            datasets: uniqueYears.map((year, index)=>({
-                    label: year,
-                    data: months.map((month)=>loganFlightsByMonth[year][month]),
-                    backgroundColor: `rgba(${index * 20}, ${100 + index * 20}, ${200 - index * 20}, 0.6)`,
-                    borderColor: `rgba(${index * 20}, ${100 + index * 20}, ${200 - index * 20}, 1)`,
+            labels: Object.keys(loganFlightsByMonth),
+            datasets: [
+                {
+                    label: "Logan International Flights",
+                    data: Object.values(loganFlightsByMonth),
+                    backgroundColor: "rgba(54, 162, 235, 0.6)",
+                    borderColor: "rgba(54, 162, 235, 1)",
                     borderWidth: 1
-                }))
+                }
+            ]
         },
         options: {
             maintainAspectRatio: false,
@@ -892,7 +888,7 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
                         family: "Arial"
                     },
                     ticks: {
-                        color: "black" // Y-axis tick font color
+                        color: "black"
                     }
                 },
                 x: {
@@ -903,7 +899,61 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
                         family: "Arial"
                     },
                     ticks: {
-                        color: "black" // X-axis tick font color
+                        color: "black"
+                    }
+                }
+            }
+        }
+    });
+    // Create a line chart for Logan International Flights
+    const loganFlightsLineChartElement = document.getElementById("logan_flights_line_chart");
+    new (0, _autoDefault.default)(loganFlightsLineChartElement, {
+        type: "line",
+        data: {
+            labels: Object.keys(loganFlightsByMonth),
+            datasets: [
+                {
+                    label: "Logan International Flights",
+                    data: Object.values(loganFlightsByMonth),
+                    fill: false,
+                    borderColor: "rgba(54, 162, 235, 1)",
+                    borderWidth: 1,
+                    pointBackgroundColor: "rgba(54, 162, 235, 1)",
+                    pointBorderColor: "rgba(75, 192, 192, 1)",
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    pointHitRadius: 10,
+                    pointHoverBackgroundColor: "rgba(75, 192, 192, 1)",
+                    pointHoverBorderColor: "rgba(220, 220, 220, 1)"
+                }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {},
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: "Number of Flights",
+                        color: "black",
+                        family: "Arial"
+                    },
+                    ticks: {
+                        color: "black"
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: "Month",
+                        color: "black",
+                        family: "Arial"
+                    },
+                    ticks: {
+                        color: "black"
                     }
                 }
             }

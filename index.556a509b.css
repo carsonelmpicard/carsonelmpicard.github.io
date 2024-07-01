@@ -99,7 +99,8 @@ article {
 
 .source {
   text-align: center;
-  padding-bottom: 20px;
+  max-width: 700px;
+  padding: 0 20px 40px;
   font-size: 12px;
   font-style: italic;
 }
@@ -109,5 +110,11 @@ article {
   padding: 40px 100px 0;
   font-size: 15px;
   font-weight: bold;
+}
+
+.social {
+  padding: 0 40px;
+  font-size: 15px;
+  line-height: 2.5;
 }
 /*# sourceMappingURL=index.556a509b.css.map */
