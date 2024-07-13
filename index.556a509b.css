@@ -117,4 +117,16 @@ article {
   font-size: 15px;
   line-height: 2.5;
 }
+
+pre {
+  white-space: pre;
+  margin: 0;
+  font-family: monospace;
+}
+
+.center-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 /*# sourceMappingURL=index.556a509b.css.map */

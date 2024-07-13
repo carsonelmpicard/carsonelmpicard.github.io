@@ -40,4 +40,4 @@ window.onload = function() {
     animateTypingEffect("animation-container-4", "Personal Projects");
 };
 
-//# sourceMappingURL=index.44983732.js.map
+//# sourceMappingURL=personal.3ed6ca86.js.map
