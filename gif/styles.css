@@ -1,0 +1,138 @@
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+pre {
+    margin: 0;
+    font-family: monospace;
+    white-space: pre;
+}
+
+body {
+  font-family: 'Menlo', 'Consolas', 'DejaVu Sans Mono', monospace;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll; /* Always show scrollbar to prevent content shift */
+}
+
+
+.header-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.site-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.flourish-embed{
+    padding: 0px 30px; /* Adjust the padding as needed */
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Ensures links inherit the text color */
+}
+
+main {
+  padding: 0 20px;
+}
+
+
+article {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px 15px;
+  background-color: #fff;
+}
+
+.article-title {
+  color: #0000ff;
+  font-size: 28px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  padding: 0px 40px; /* Adjust the padding as needed */
+}
+
+.article-subtitle {
+  color: #0000ff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 0px 40px; /* Adjust the padding as needed */
+}
+
+
+.article-content {
+  font-size: 15px;
+  line-height: 2.5;
+  margin: 20px 0;
+  padding: 0px 40px; /* Adjust the padding as needed */
+  text-align: justify; /* Justify text */
+}
+
+
+/* Optional: Style for blinking cursor */
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: black;
+    animation: blink 0.7s infinite alternate;
+}
+
+.typing-container {
+    margin-bottom: 20px;
+}
+
+.animated-heading {
+    font-size: 26px; /* Adjust the font size */
+    font-weight: normal; /* Adjust the font weight */
+    font-weight: bold;
+}
+
+.chart {
+  max-height: 500px;
+  margin: 20px 0;
+  padding: 0px 40px; /* Adjust the padding as needed */
+  text-align: center; /* Corrected property name */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.source{
+  font-size: 12px;
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 40px;
+  max-width: 700px;
+    padding: 0px 20px 40px; /* Adjust the padding as needed */
+}
+
+.title{
+  font-size: 15px;
+  padding: 0px 100px; /* Adjust the padding as needed */
+  padding-top: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.social{
+    padding: 0px 40px; /* Adjust the padding as needed */
+    font-size: 15px;
+    line-height: 2.5;
+}
