@@ -33,7 +33,6 @@ a {
   padding-top: 50px;
 }
 
-
 main {
   padding: 0 20px;
 }
@@ -72,6 +71,19 @@ article {
   padding: 0 50px;
   font-size: 14px;
   line-height: 2.5;
+}
+
+.social ul {
+  list-style-position: inside; /* Place the bullet inside the list item */
+  padding-left: 20px; /* Indent the entire list */
+}
+
+.social ul li {
+  margin-bottom: 5px; /* Optional: Add some spacing between list items */
+}
+
+.social ul li.indented {
+  padding-left: 30px; /* Adjust this value to include indentation for both text and bullet */
 }
 
 @keyframes blink {
@@ -125,11 +137,11 @@ a:hover {
   color: inherit; /* Ensure hover color is the same as default */
 }
 
-.flourish-embed{
+.flourish-embed {
   padding: 0 39px;
 }
 
-nav{
+nav {
   font-size: 14px;
 }
 
