@@ -1,16 +1,13 @@
 function animateTypingEffect(containerId, text) {
     const heading = document.getElementById(containerId);
 
-    // Check if heading element exists
     if (!heading) {
         console.error(`Element with ID '${containerId}' not found.`);
         return;
     }
 
-    // Clear existing content
     heading.innerHTML = '';
 
-    // Create a cursor element
     const cursor = document.createElement('span');
     cursor.className = 'cursor';
     heading.appendChild(cursor);
@@ -24,28 +21,20 @@ function animateTypingEffect(containerId, text) {
             span.textContent = char;
             heading.insertBefore(span, cursor);
             charIndex++;
-            setTimeout(type, 50); // Adjust typing speed here (milliseconds)
+            setTimeout(type, 50);
         } else {
-            // Keep cursor blinking at the end
-            cursor.style.display = 'inline-block'; // Ensure cursor is visible
-            cursor.style.animation = 'blink 0.7s infinite alternate'; // Apply blink animation
+            cursor.style.display = 'inline-block';
+            cursor.style.animation = 'blink 0.7s infinite alternate';
         }
     }
 
-    type(); // Start typing animation
+    type();
 }
 
-// Start animation when the page loads
 window.onload = function() {
-    // Call animateTypingEffect for animation-container-1 in file1.html
     animateTypingEffect('animation-container-1', 'I am learning data visualization.');
-
-    // Call animateTypingEffect for animation-container-2 in file2.html
     animateTypingEffect('animation-container-2', 'Flourish');
-
-     // Call animateTypingEffect for animation-container-2 in file2.html
     animateTypingEffect('animation-container-3', 'Chart.js');
-
-    // Call animateTypingEffect for animation-container-2 in file2.html
     animateTypingEffect('animation-container-4', 'Personal Projects');
+    animateTypingEffect('animation-container-5', 'Resources');
 };
